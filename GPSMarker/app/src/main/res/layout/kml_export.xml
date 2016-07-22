@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    >
+    <EditText
+        android:id="@+id/etCamada"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome da camada"
+        android:textColor="@color/cinza"
+        android:textColorHint="@color/cinza_claro"
+        android:maxLines="1"
+        android:singleLine="true"
+        />
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+        <RadioButton
+            android:id="@+id/rbponto"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margem_grande"
+            android:text="@string/pontos"
+            android:checked="true"
+            />
+        <RadioButton
+            android:id="@+id/rblinha"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margem_grande"
+            android:text="@string/linha"/>
+        <RadioButton
+            android:id="@+id/rbpoligono"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margem_grande"
+            android:text="@string/poligono"
+            />
+    </RadioGroup>
+
+</LinearLayout>

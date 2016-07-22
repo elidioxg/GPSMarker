@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_principal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/cinza"
+    >
+
+    <TextView
+        android:id="@+id/tv_pontos"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/branco"
+        android:layout_alignParentTop="true"
+        android:background="@color/cinza"
+        android:layout_centerHorizontal="true"/>
+
+
+    <ListView
+        android:id="@+id/lv_registro"
+        android:layout_below="@+id/tv_pontos"
+        android:layout_above="@+id/l_buttons"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+
+    </ListView>
+
+    <RelativeLayout
+        android:id="@+id/l_buttons"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@color/cinza_claro">
+
+        <ImageButton
+            android:id="@+id/ib_exportar"
+            android:layout_width="@dimen/buttons"
+            android:layout_height="@dimen/buttons"
+            android:contentDescription="@string/marcar_ponto"
+            android:src="@mipmap/ic_kml"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/margem"
+            />
+
+        <ImageButton
+            android:id="@+id/ib_mapa"
+            android:layout_width="@dimen/buttons"
+            android:layout_height="@dimen/buttons"
+            android:contentDescription="@string/mapa"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/margem"
+            android:background="@mipmap/ic_back"
+            />
+
+        <ImageButton
+            android:id="@+id/ib_excluir"
+            android:layout_width="@dimen/buttons"
+            android:layout_height="@dimen/buttons"
+            android:contentDescription="@string/apagar"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="@dimen/margem"
+            android:background="@mipmap/ic_remove"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

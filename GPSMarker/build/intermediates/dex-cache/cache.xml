@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/elidioxg/Desenvolvimento/Android/gps/GPSMarker/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="4cd81333e1f19d8c12a705126e07d8121a5812ae">
+        <dex dex="/home/elidioxg/Desenvolvimento/Android/gps/GPSMarker/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_07db596f1a5a8a4be26f741b8b56f115b9b69206.jar" />
+    </item>
+
+</items>

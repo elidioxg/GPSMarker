@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/gps"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/branco">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margem"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/lay_marcar1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/branco"
+                >
+
+                <TextView
+                    android:id="@+id/in_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margem_grande"
+                    android:layout_alignParentLeft="true"
+                    android:text=""
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/fonteGrande"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/ibmarcar"
+                        android:layout_width="@dimen/buttons"
+                        android:layout_height="@dimen/buttons"
+                        android:background="@mipmap/ic_mark"
+                        android:contentDescription="@string/marcar_ponto" />
+
+                    <ImageButton
+                        android:id="@+id/ibViewPoints"
+                        android:layout_width="@dimen/buttons"
+                        android:layout_height="@dimen/buttons"
+                        android:background="@mipmap/ic_view_records"
+                        android:contentDescription="@string/pontos_marcados" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margem"
+                android:background="@color/preto"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margem_normal"
+                        android:text="@string/latitude"
+                        android:textColor="@color/branco"
+                        android:textSize="@dimen/fonteNormal"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/in_latitude"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margem_normal"
+                        android:gravity="right"
+                        android:text=""
+                        android:textColor="@color/yellow"
+                        android:textSize="@dimen/fonteNormal"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/in_lat_gms"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margem_normal"
+                        android:gravity="right"
+                        android:text=""
+                        android:textColor="@color/yellow"
+                        android:textSize="@dimen/fontePequena" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margem_normal"
+                        android:text="@string/longitude"
+                        android:textColor="@color/branco"
+                        android:textSize="@dimen/fonteNormal"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/in_longitude"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margem_normal"
+                        android:gravity="right"
+                        android:text=""
+                        android:textColor="@color/yellow"
+                        android:textSize="@dimen/fonteNormal"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/in_lon_gms"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margem_normal"
+                        android:gravity="right"
+                        android:text=""
+                        android:textColor="@color/yellow"
+                        android:textSize="@dimen/fontePequena" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margem"
+                android:background="@color/preto"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margem_grande"
+                    android:text="@string/altitude"
+                    android:textColor="@color/branco"
+                    android:textSize="@dimen/fonteNormal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/in_altitude"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margem_grande"
+                    android:gravity="right"
+                    android:text=""
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/fonteNormal"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margem"
+                android:background="@color/preto"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margem_grande"
+                        android:text="@string/quadrante"
+                        android:textColor="@color/branco"
+                        android:textSize="@dimen/fonteNormal"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/in_quadrante"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margem_grande"
+                        android:gravity="right"
+                        android:text=""
+                        android:textColor="@color/yellow"
+                        android:textSize="@dimen/fonteNormal"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margem_grande"
+                        android:text="@string/north"
+                        android:textColor="@color/branco"
+                        android:textSize="@dimen/fonteNormal"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/in_norte"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margem_grande"
+                        android:gravity="right"
+                        android:text=""
+                        android:textColor="@color/yellow"
+                        android:textSize="@dimen/fonteNormal"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margem_grande"
+                        android:text="@string/east"
+                        android:textColor="@color/branco"
+                        android:textSize="@dimen/fonteNormal"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/in_leste"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margem_grande"
+                        android:gravity="right"
+                        android:text=""
+                        android:textColor="@color/yellow"
+                        android:textSize="@dimen/fonteNormal"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margem"
+                android:background="@color/preto"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margem_grande"
+                    android:text="@string/precision"
+                    android:textColor="@color/branco"
+                    android:textSize="@dimen/fonteNormal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/in_precisao"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margem_grande"
+                    android:gravity="right"
+                    android:text=""
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/fonteNormal"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margem"
+                android:background="@color/preto"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margem_grande"
+                    android:text="@string/ultima_localizacao"
+                    android:textColor="@color/branco"
+                    android:textSize="@dimen/fonteNormal" />
+
+                <TextView
+                    android:id="@+id/tv_data"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margem_grande"
+                    android:gravity="right"
+                    android:text=""
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/fonteNormal"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margem"
+                android:background="@color/preto"
+                android:orientation="vertical">
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
