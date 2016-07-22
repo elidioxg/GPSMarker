@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/branco"
+    android:onClick="OnItemClick"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margem">
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:id="@+id/cb_ponto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/margem"
+                android:checked="true" />
+
+            <LinearLayout
+                android:id="@+id/layout_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/cb_ponto"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/ibUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageButton
+                    android:id="@+id/ibDown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tvregistro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvhora"
+                android:layout_margin="@dimen/margem"
+                android:layout_toRightOf="@+id/layout_position"
+                android:text="Registro"
+                android:textSize="@dimen/fonteGrande" />
+
+            <TextView
+                android:id="@+id/tv_descricao"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvdata"
+                android:layout_margin="@dimen/margem"
+                android:layout_toRightOf="@+id/layout_position"
+                android:maxLines="1"
+                android:text="@string/descricao"
+                android:textSize="@dimen/fonteNormal" />
+
+            <TextView
+                android:id="@+id/tvhora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="time"
+                android:textSize="@dimen/fonteNormal" />
+
+            <TextView
+                android:id="@+id/tvdata"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/tvregistro"
+                android:text="data"
+                android:textSize="@dimen/fonteNormal" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
