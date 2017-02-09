@@ -1,13 +1,13 @@
 package geocodigos.gpsmarker;
 
 import android.app.AlertDialog;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +29,6 @@ import geocodigos.gpsmarker.Utils.CoordinatesArray;
  */
 public class GPSLocationViewFragment extends Fragment implements LocationListener {
 
-
     private String strFormat = "%.5f";
     private int requests = 3000;
     private int min_distance=1;
@@ -41,7 +40,6 @@ public class GPSLocationViewFragment extends Fragment implements LocationListene
     private TextView tvLatitude, tvLongitude, tvPrecisao, tvAltitude,
             tvSetor, tvNorte, tvLeste, tvData, tvLatgms, tvLongms, tvGpsStatus;
 
-    private static boolean fragmentVisivel;
     private double latitude, longitude, altitude, precisao;
 
     private final String keyLatitude = "lat";
@@ -57,12 +55,31 @@ public class GPSLocationViewFragment extends Fragment implements LocationListene
 
     private View view;
 
+    /**
+     * Create View for the fragment
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_gps, container, false);
         ibPoints = (ImageButton) view.findViewById(R.id.ibViewPoints);
         ibMark = (ImageButton) view.findViewById(R.id.ibmarcar);
+
+        tvGpsStatus = (TextView) view.findViewById(R.id.in_status);
+        tvAltitude = (TextView) view.findViewById(R.id.in_altitude);
+        tvLongitude = (TextView) view.findViewById(R.id.in_longitude);
+        tvLatitude = (TextView) view.findViewById(R.id.in_latitude);
+        tvLeste = (TextView) view.findViewById(R.id.in_leste);
+        tvNorte = (TextView) view.findViewById(R.id.in_norte);
+        tvPrecisao = (TextView) view.findViewById(R.id.in_precisao);
+        tvSetor = (TextView) view.findViewById(R.id.in_quadrante);
+        tvLatgms = (TextView) view.findViewById(R.id.in_lat_gms);
+        tvLongms = (TextView) view.findViewById(R.id.in_lon_gms);
+        tvData  = (TextView) view.findViewById(R.id.tv_data);
 
         ibPoints.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -158,6 +175,9 @@ public class GPSLocationViewFragment extends Fragment implements LocationListene
         return view;
     }
 
+    /**
+     * Get the GPS status and show to the user
+     */
     public void gpsStatus() {
         locationManager = (LocationManager) getActivity().
                 getSystemService(Context.LOCATION_SERVICE);
@@ -178,7 +198,10 @@ public class GPSLocationViewFragment extends Fragment implements LocationListene
         locationManager.requestLocationUpdates(provider, requests, min_distance, this);
     }
 
-    public void preencheCampos(){
+    /**
+     * Add the GPS information to TextView on fragment layout
+     */
+    public void fillProperties(){
         if(latitude!=0 && longitude!=0) {
             DMSConversion dms = new DMSConversion();
             String sLat = dms.convertFromDegrees(latitude);
@@ -225,9 +248,7 @@ public class GPSLocationViewFragment extends Fragment implements LocationListene
         strTime = time.returnTime();
         GetDate date = new GetDate();
         strDate = date.returnDate();
-        if (fragmentVisivel) {
-            preencheCampos();
-        }
+        fillProperties();
     }
 
     @Override
@@ -246,7 +267,7 @@ public class GPSLocationViewFragment extends Fragment implements LocationListene
         // TODO Auto-generated method stub
         super.onResume();
         locationManager.requestLocationUpdates(provider, requests, min_distance, this);
-        preencheCampos();
+        fillProperties();
         gpsStatus();
     }
 

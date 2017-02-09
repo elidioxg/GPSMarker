@@ -61,7 +61,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * Add a Point in the Database
+     * Add a Point to the Database
      * @param pointModel
      */
     public void addPoint(PointModel pointModel) {
@@ -101,6 +101,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    /**
+     * Update a record on database
+     * @param pointModel
+     */
     public void updatePoint(PointModel pointModel) {
 
         SQLiteDatabase db = this.getWritableDatabase();

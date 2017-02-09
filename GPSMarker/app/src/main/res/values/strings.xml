@@ -104,6 +104,9 @@
     <string name="convert_latlon">Convert from Latitude/Longitude</string>
     <string name="convert_gms">Convert from deg, min, sec</string>
 
+    <string name="csv_export">CSV Export</string>
+    <string name="file_name">File name</string>
+
     <string-array name="androidstrings">
         <item>@string/marcar_ponto</item>
         <item>@string/pontos_marcados</item>

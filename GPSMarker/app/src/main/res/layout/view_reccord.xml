@@ -1,324 +1,282 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layout_registro"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <RelativeLayout
         android:id="@+id/layout_buttons"
-        android:layout_alignParentTop="true"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@color/cinza_claro"
-        >
+        android:layout_alignParentTop="true"
+        android:background="@color/preto">
 
         <ImageButton
             android:id="@+id/ib_anterior"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentLeft="true"
-            android:background="@mipmap/ic_left"
-            />
+            android:background="@mipmap/ic_left" />
 
         <ImageButton
             android:id="@+id/ib_salvar"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
-            android:background="@mipmap/ic_save"
-            />
+            android:background="@mipmap/ic_save" />
 
         <ImageButton
             android:id="@+id/ib_proximo"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentRight="true"
-            android:background="@mipmap/ic_right"
-            />
+            android:background="@mipmap/ic_right" />
 
     </RelativeLayout>
 
 
     <ScrollView
-        android:layout_below="@+id/layout_buttons"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/layout_buttons">
 
-        <LinearLayout
+        <GridLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:orientation="vertical">
+            android:columnCount="4"
+            android:orientation="vertical"
+            android:rowCount="10"
+            android:layout_margin="@dimen/margem_grande">
 
-            <RelativeLayout
+            <TextView
+                android:id="@+id/tvRegistro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_column="1"
+                android:layout_columnSpan="3"
+                android:layout_row="0"
+                android:textSize="@dimen/fonteNormal"
+                android:text="@string/registro" />
+
+
+
+            <TextView
+                android:id="@+id/tvDescricao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="1"
+                android:text="@string/descricao"
+                android:textSize="@dimen/fonteNormal"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etdescricao"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margem_grande"
-                >
+                android:layout_column="1"
+                android:layout_row="1"
+                android:layout_columnSpan="3"
+                android:layout_margin="@dimen/margem"
+                android:layout_toRightOf="@+id/tvDescricao"
+                android:hint="@string/descricao" />
 
-                <TextView
-                    android:id="@+id/tvRegistro"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:text="@string/registro"/>
+            <TextView
+                android:id="@+id/tvHora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="2"
+                android:text="@string/time"
+                android:textSize="@dimen/fonteNormal"
+                android:textStyle="bold" />
 
-            </RelativeLayout>
+            <EditText
+                android:id="@+id/etHora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="2"
+                android:layout_margin="@dimen/margem"
+                android:hint="@string/time"
+                android:maxLength="10"
+                android:maxLines="1" />
 
-            <RelativeLayout
+            <TextView
+                android:id="@+id/tvData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_row="2"
+                android:text="@string/data"
+                android:textSize="@dimen/fonteNormal"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="3"
+                android:layout_row="2"
+                android:layout_margin="@dimen/margem"
+                android:hint="@string/data"
+                android:maxLength="10"
+                android:maxLines="1" />
+
+            <TextView
+                android:id="@+id/tvLatitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="3"
+                android:text="@string/latitude"
+                android:textSize="@dimen/fonteNormal"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etlatitude"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margem_grande">
+                android:layout_column="1"
+                android:layout_row="3"
+                android:layout_columnSpan="3"
+                android:layout_margin="@dimen/margem"
+                android:hint="@string/latitude"
+                android:inputType="numberDecimal|numberSigned" />
 
-                <TextView
-                    android:id="@+id/tvDescricao"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/descricao"
-                    android:textSize="@dimen/fonteNormal"
-                    android:textStyle="bold"
-                    />
+            <TextView
+                android:id="@+id/tvLongitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="4"
+                android:text="@string/longitude"
+                android:textSize="@dimen/fonteNormal"
+                android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/etdescricao"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/tvDescricao"
-                    android:hint="@string/descricao"
-                    android:layout_margin="@dimen/margem"
-                    />
-
-            </RelativeLayout>
-
-            <RelativeLayout
+            <EditText
+                android:id="@+id/etlongitude"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margem_grande">
+                android:layout_column="1"
+                android:layout_row="4"
+                android:layout_columnSpan="3"
+                android:layout_margin="@dimen/margem"
+                android:layout_toRightOf="@+id/tvLongitude"
+                android:hint="@string/longitude"
+                android:inputType="numberDecimal|numberSigned" />
 
-                <TextView
-                    android:id="@+id/tvHora"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/time"
-                    android:textSize="@dimen/fonteNormal"
-                    android:textStyle="bold"
-                    />
+            <TextView
+                android:id="@+id/tvSetor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="5"
+                android:text="@string/quadrante"
+                android:textSize="@dimen/fonteNormal"
+                android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/etHora"
-                    android:layout_toRightOf="@+id/tvHora"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/time"
-                    android:maxLength="10"
-                    android:maxLines="1"
-                    android:layout_margin="@dimen/margem"
-                    />
-
-                <TextView
-                    android:id="@+id/tvData"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/data"
-                    android:layout_toLeftOf="@+id/etData"
-                    android:textSize="@dimen/fonteNormal"
-                    android:textStyle="bold"
-                    />
-
-                <EditText
-                    android:id="@+id/etData"
-                    android:layout_alignParentRight="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/data"
-                    android:maxLength="10"
-                    android:maxLines="1"
-                    android:layout_margin="@dimen/margem"
-                    />
-
-            </RelativeLayout>
-
-            <RelativeLayout
+            <EditText
+                android:id="@+id/etSetor"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margem_grande">
+                android:layout_column="1"
+                android:layout_row="5"
+                android:layout_columnSpan="3"
+                android:layout_margin="@dimen/margem"
+                android:layout_toRightOf="@+id/tvSetor"
+                android:hint="@string/quadrante" />
 
-                <TextView
-                    android:id="@+id/tvLatitude"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/latitude"
-                    android:textSize="@dimen/fonteNormal"
-                    android:textStyle="bold"
-                    />
+            <TextView
+                android:id="@+id/tvNorte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="6"
+                android:text="@string/north"
+                android:textSize="@dimen/fonteNormal"
+                android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/etlatitude"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/tvLatitude"
-                    android:hint="@string/latitude"
-                    android:inputType="numberDecimal|numberSigned"
-                    android:layout_margin="@dimen/margem"
-                    />
-
-            </RelativeLayout>
-
-            <RelativeLayout
+            <EditText
+                android:id="@+id/etNorte"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margem_grande">
+                android:layout_column="1"
+                android:layout_row="6"
+                android:layout_columnSpan="3"
+                android:layout_margin="@dimen/margem"
+                android:hint="@string/north"
+                android:inputType="number" />
 
-                <TextView
-                    android:id="@+id/tvLongitude"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/longitude"
-                    android:textSize="@dimen/fonteNormal"
-                    android:textStyle="bold"
-                    />
+            <TextView
+                android:id="@+id/tvLeste"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="7"
+                android:text="@string/east"
+                android:textSize="@dimen/fonteNormal"
+                android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/etlongitude"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/tvLongitude"
-                    android:hint="@string/longitude"
-                    android:inputType="numberDecimal|numberSigned"
-                    android:layout_margin="@dimen/margem"
-                    />
-
-            </RelativeLayout>
-
-            <RelativeLayout
+            <EditText
+                android:id="@+id/etLeste"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margem_grande"
-                >
+                android:layout_column="1"
+                android:layout_row="7"
+                android:layout_columnSpan="3"
+                android:layout_margin="@dimen/margem"
+                android:layout_toRightOf="@+id/tvLeste"
+                android:hint="@string/east"
+                android:inputType="number" />
 
-                <TextView
-                    android:id="@+id/tvSetor"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/quadrante"
-                    android:textSize="@dimen/fonteNormal"
-                    android:textStyle="bold"
-                    />
-
-                <EditText
-                    android:id="@+id/etSetor"
-                    android:layout_toRightOf="@+id/tvSetor"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/quadrante"
-                    android:layout_margin="@dimen/margem"
-                    />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="fill_parent"
+            <TextView
+                android:id="@+id/tvAltitude"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margem_grande">
+                android:layout_column="0"
+                android:layout_row="8"
+                android:text="@string/altitude"
+                android:textSize="@dimen/fonteNormal"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/tvNorte"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/north"
-                    android:textSize="@dimen/fonteNormal"
-                    android:textStyle="bold"
-                    />
-
-                <EditText
-                    android:id="@+id/etNorte"
-                    android:layout_toRightOf="@+id/tvNorte"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/north"
-                    android:inputType="number"
-                    android:layout_margin="@dimen/margem"
-                    />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="fill_parent"
+            <EditText
+                android:id="@+id/etAltitude"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margem_grande">
+                android:layout_column="1"
+                android:layout_row="8"
+                android:layout_columnSpan="3"
+                android:layout_margin="@dimen/margem"
+                android:hint="@string/altitude"
+                android:inputType="numberDecimal"
+                android:maxLength="6"
+                android:maxLines="1" />
 
-                <TextView
-                    android:id="@+id/tvLeste"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/east"
-                    android:textSize="@dimen/fonteNormal"
-                    android:textStyle="bold"
-                    />
-
-                <EditText
-                    android:id="@+id/etLeste"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/east"
-                    android:layout_toRightOf="@+id/tvLeste"
-                    android:inputType="number"
-                    android:layout_margin="@dimen/margem"
-                    />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="fill_parent"
+            <TextView
+                android:id="@+id/tvPrecisao"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margem_grande">
+                android:layout_column="0"
+                android:layout_row="9"
+                android:text="@string/precision"
+                android:textSize="@dimen/fonteNormal"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/tvAltitude"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/altitude"
-                    android:textSize="@dimen/fonteNormal"
-                    android:textStyle="bold"
-                    />
+            <EditText
+                android:id="@+id/etPrecisao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="9"
+                android:layout_margin="@dimen/margem"
+                android:hint="@string/precision"
+                android:inputType="numberDecimal"
+                android:maxLength="6"
+                android:maxLines="1" />
 
-                <EditText
-                    android:id="@+id/etAltitude"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/tvAltitude"
-                    android:hint="@string/altitude"
-                    android:inputType="numberDecimal"
-                    android:maxLength="6"
-                    android:maxLines="1"
-                    android:layout_margin="@dimen/margem"
-                    />
-
-                <TextView
-                    android:id="@+id/tvPrecisao"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toLeftOf="@+id/etPrecisao"
-                    android:text="@string/precision"
-                    android:textSize="@dimen/fonteNormal"
-                    android:textStyle="bold"
-                    />
-
-                <EditText
-                    android:id="@+id/etPrecisao"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/precision"
-                    android:layout_alignParentRight="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="6"
-                    android:maxLines="1"
-                    android:layout_margin="@dimen/margem"
-                    />
-
-            </RelativeLayout>
-
-        </LinearLayout>
+        </GridLayout>
 
     </ScrollView>
 

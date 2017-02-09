@@ -1,6 +1,12 @@
-<<<<<<< HEAD
-Aplicativo que funciona como GPS, salva os pontos no banco de dados, exporta para KML e CSV, mostra os pontos no Google Maps
 =======
 # GPSMarker
 GPS tools for moobile
->>>>>>> 7dfac9ce8420f5256af309bb3c2735886627aec7
+
+# What is it?
+=======
+GPS tool for mobile applications. Give the coordinates in Latitude/Longitude on decimal degrees, UTM and Latitude/Longitude on degrees, minutes and seconds. The points saved can be exported as Csv file or Kml layers. 
+
+=======
+
+#Documentation
+
